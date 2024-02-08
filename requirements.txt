@@ -1,0 +1,14 @@
+decorator
+firebase-admin
+h5py
+joblib
+keras==2.13.1
+matplotlib
+numpy
+pandas
+parso
+pefile
+python-dotenv
+scikit-learn
+seaborn
+tensorflow-cpu==2.13.0
