@@ -1,0 +1,1 @@
+{"prediction": "Uncertain (mostly Malware)", "rf_probability": "82.00%", "nn_prediction": "100.00%"}
