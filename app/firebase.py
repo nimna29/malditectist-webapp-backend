@@ -3,6 +3,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import storage
 from dotenv import load_dotenv
+from datetime import timedelta
 
 load_dotenv()  # Load environment variables from the .env file
 
@@ -35,3 +36,17 @@ if bucket.exists():
     print('Firebase Storage connected successfully!')
 else:
     print('Error connecting to Firebase Storage.')
+
+
+def upload_to_firebase(file, unique_key):
+    """
+    Uploads the given file to Firebase Storage, and returns the filename, blob, and signed URL.
+    """
+    filename = f"{unique_key}_{file.name}"
+    blob = bucket.blob(filename)
+    blob.upload_from_file(file)
+
+    file_url = blob.generate_signed_url(
+        expiration=timedelta(minutes=30), method='GET')
+
+    return filename, blob, file_url
