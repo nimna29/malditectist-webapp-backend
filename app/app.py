@@ -11,3 +11,4 @@ app = FastAPI(
 @app.get("/", tags=['Root'])
 def home():
     return {'message': 'Welcome to MalDitectist'}
+
