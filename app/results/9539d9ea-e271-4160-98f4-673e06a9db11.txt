@@ -1,0 +1,1 @@
+{"prediction": "Legitimate", "rf_probability": "67.00%", "nn_prediction": "13.74%"}
