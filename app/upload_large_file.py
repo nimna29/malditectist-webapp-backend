@@ -12,13 +12,6 @@ from .firebase import upload_to_firebase
 
 router = APIRouter()
 
-
-# Optionally add an OPTIONS route handler
-@router.options("/api/upload_large_file/")
-async def options_upload_large_file():
-    return {"message": "Allow: GET, POST, OPTIONS"}
-
-
 # Load environment variables from the .env file
 load_dotenv()
 
