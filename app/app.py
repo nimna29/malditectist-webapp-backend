@@ -17,7 +17,8 @@ origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "https://nimna29.github.io/malditectist-webapp-frontend/",
-    "http://nimna29.github.io/malditectist-webapp-frontend/"
+    "http://nimna29.github.io/malditectist-webapp-frontend/",
+    "nimna29.github.io/malditectist-webapp-frontend/"
 ]
 
 app.add_middleware(
