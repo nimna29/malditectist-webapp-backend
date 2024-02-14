@@ -4,6 +4,7 @@ fastapi
 uvicorn[standard]
 python-multipart
 asyncio
+fastapi.middleware.cors
 h5py==3.9.0
 joblib==1.3.2
 keras==2.13.1
