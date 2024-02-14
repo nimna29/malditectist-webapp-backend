@@ -6,6 +6,12 @@ from .ml import classify_file
 router = APIRouter()
 
 
+# Optionally add an OPTIONS route handler
+@router.options("/api/upload_file/")
+async def options_upload_file():
+    return {"message": "Allow: GET, POST, OPTIONS"}
+
+
 @router.post("/api/upload_file/", tags=["Upload File"])
 async def upload_file(file: UploadFile = File(...), unique_key: str = Form(...)):
     """

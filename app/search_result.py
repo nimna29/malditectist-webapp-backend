@@ -5,6 +5,13 @@ import json
 
 router = APIRouter()
 
+
+# Optionally add an OPTIONS route handler
+@router.options("/api/search_result/")
+async def options_search_result():
+    return {"message": "Allow: GET, OPTIONS"}
+
+
 # Directory to store result files
 RESULTS_DIRECTORY = "app/results/"
 
