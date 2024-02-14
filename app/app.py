@@ -16,12 +16,13 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://nimna29.github.io/malditectist-webapp-frontend/"
+    "https://nimna29.github.io/malditectist-webapp-frontend/",
+    "http://nimna29.github.io/malditectist-webapp-frontend/"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
     # allow_methods=["*"],
@@ -38,3 +39,7 @@ app.include_router(upload_file_router)
 app.include_router(upload_large_file_router)
 app.include_router(search_result_router)
 
+
+import logging
+
+logging.basicConfig(level=logging.INFO)
